@@ -8,6 +8,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: ['w-16', 'h-16'],
   theme: {
     container: {
       center: true,

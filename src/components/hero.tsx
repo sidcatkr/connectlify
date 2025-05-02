@@ -88,6 +88,7 @@ export default function Hero() {
     <section className="w-full flex flex-col items-center justify-center py-24 px-4">
       <motion.div
         className="relative w-16 h-16 rounded-md overflow-hidden mb-8"
+        style={{ width: 64, height: 64 }}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
