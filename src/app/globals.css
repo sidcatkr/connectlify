@@ -47,3 +47,22 @@ body {
 .quick-start-btn:hover {
   background-color: #0060df;
 }
+
+/* Add will-change for better performance on animations */
+.will-change-transform {
+  will-change: transform, opacity, filter, width;
+}
+
+/* Add motion blur support */
+@keyframes blur-transition {
+  0% {
+    filter: blur(4px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.blur-transition {
+  animation: blur-transition 0.3s ease-out forwards;
+}

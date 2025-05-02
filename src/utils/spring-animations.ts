@@ -1,7 +1,6 @@
 "use client"
 
-import { animate } from "motion"
-import { useSpring } from "motion/react"
+import { animate, type AnimationOptions, type MotionValue, useSpring } from "framer-motion"
 
 export const springConfig = {
   light: {
@@ -19,16 +18,21 @@ export const springConfig = {
     damping: 30,
     mass: 1,
   },
+  smooth: {
+    stiffness: 80,
+    damping: 20,
+    mass: 1.2,
+  },
 }
 
-export function useSpringValue(value: any, config = "medium") {
+export function useSpringValue(value: MotionValue<number>, config = "medium") {
   return useSpring(value, springConfig[config as keyof typeof springConfig])
 }
 
 export function animateWithSpring(
   element: Element | Element[],
   keyframes: Record<string, any>,
-  options: any = {},
+  options: Partial<AnimationOptions> = {},
 ) {
   return animate(element, keyframes, {
     type: "spring",

@@ -1,5 +1,6 @@
 type SplitOptions = {
   type?: "words" | "chars"
+  preserveSpaces?: boolean
 }
 
 export function splitText(element: Element, options: SplitOptions = { type: "words" }): Element[] {
@@ -10,13 +11,38 @@ export function splitText(element: Element, options: SplitOptions = { type: "wor
   if (options.type === "chars") {
     const chars: Element[] = []
 
-    text.split("").forEach((char) => {
-      const span = document.createElement("span")
-      span.className = "split-char"
-      span.textContent = char
-      element.appendChild(span)
-      chars.push(span)
-    })
+    // If we want to preserve spaces between words
+    if (options.preserveSpaces) {
+      // Split the text into words first
+      const words = text.split(/(\s+)/)
+
+      // Then split each word into characters
+      words.forEach((word, wordIndex) => {
+        if (/^\s+$/.test(word)) {
+          // This is a space/whitespace
+          const space = document.createTextNode(word)
+          element.appendChild(space)
+        } else {
+          // This is a word, split into characters
+          word.split("").forEach((char) => {
+            const span = document.createElement("span")
+            span.className = "split-char"
+            span.textContent = char
+            element.appendChild(span)
+            chars.push(span)
+          })
+        }
+      })
+    } else {
+      // Original behavior - split all characters including spaces
+      text.split("").forEach((char) => {
+        const span = document.createElement("span")
+        span.className = "split-char"
+        span.textContent = char
+        element.appendChild(span)
+        chars.push(span)
+      })
+    }
 
     return chars
   }

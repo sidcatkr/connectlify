@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { animate, stagger } from "motion"
+import { animate, stagger } from "framer-motion"
 import { splitText } from "@/utils/split-text"
 
 export default function WavyTextDemo() {

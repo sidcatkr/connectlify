@@ -6,17 +6,8 @@ import "@/app/globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Connectlify",
-  description: "Welcome to Connectlify",
-  icons: {
-    icon: "/connectlify.svg",
-    shortcut: "/connectlify.svg",
-    apple: "/apple-touch-icon.png",
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#5bbad5" }
-    ],
-  },
-  manifest: "/site.webmanifest",
+  title: "Connectlify - Make it connect",
+  description: "A robust animation library for modern web projects",
 }
 
 export default function RootLayout({

@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { Menu, X, Search } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import SearchOverlay from "./search-overlay"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -29,33 +31,26 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <motion.div
-            className="w-8 h-8 accent-bg rounded-md flex items-center justify-center mr-2"
+            className="relative w-8 h-8 rounded-md overflow-hidden"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-black font-bold text-sm">C</span>
+            <Image src="/images/logo.png" alt="Connectlify Logo" width={32} height={32} className="object-contain rounded" />
           </motion.div>
-          <span className="font-heading text-xl font-bold">Connectlify</span>
+          <span className="font-heading text-xl font-bold text-white">Connectlify</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="#" className="text-sm hover:text-gray-300">
-            Docs
-          </Link>
-          <Link href="#" className="text-sm hover:text-gray-300">
-            Examples
-          </Link>
-          <div className="flex items-center">
-            <Search className="w-4 h-4 mr-2" />
-            <span className="text-sm">Search</span>
-          </div>
+          <SearchOverlay />
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center space-x-4 md:hidden">
+          <button className="text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -68,15 +63,7 @@ export default function Navbar() {
           transition={{ duration: 0.3 }}
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <Link href="#" className="text-base font-medium py-2">
-              Docs
-            </Link>
-            <Link href="#" className="text-base font-medium py-2">
-              Examples
-            </Link>
-            <Link href="#" className="text-base font-medium py-2">
-              Search
-            </Link>
+            <SearchOverlay />
           </div>
         </motion.div>
       )}

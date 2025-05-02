@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -15,7 +15,6 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            style={{ willChange: "transform, opacity" }}
           >
             Ready to <span className="text-gradient">connect</span> your digital experiences?
           </motion.h2>
@@ -26,7 +25,6 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            style={{ willChange: "transform, opacity" }}
           >
             Start building fluid, intuitive user experiences today with Connectlify.
           </motion.p>
@@ -37,7 +35,6 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            style={{ willChange: "transform, opacity" }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -63,8 +60,11 @@ export default function CTA() {
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
           }}
-          transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-          style={{ willChange: "transform, opacity" }}
+          transition={{
+            repeat: Number.POSITIVE_INFINITY,
+            duration: 8,
+            ease: "easeInOut",
+          }}
         />
         <motion.div
           className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-primary/10 blur-3xl"
@@ -72,8 +72,12 @@ export default function CTA() {
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
           }}
-          transition={{ repeat: Infinity, duration: 10, delay: 1, ease: "easeInOut" }}
-          style={{ willChange: "transform, opacity" }}
+          transition={{
+            repeat: Number.POSITIVE_INFINITY,
+            duration: 10,
+            delay: 1,
+            ease: "easeInOut",
+          }}
         />
       </div>
     </section>

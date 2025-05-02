@@ -1,7 +1,6 @@
 import Hero from "@/components/hero"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
-import ChatInput from "@/components/chat-input"
 
 export default function Home() {
   return (
@@ -9,7 +8,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Footer />
-      <ChatInput />
     </main>
   )
 }
