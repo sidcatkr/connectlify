@@ -1,10 +1,9 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import Image from "next/image"
-import { motion, animate, stagger } from "framer-motion"
+import { motion } from "framer-motion"
+import { animate, stagger } from "framer-motion"
 import { splitText } from "@/utils/split-text"
-import { animateWithSpring } from "@/utils/spring-animations"
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,44 +17,18 @@ export default function Hero() {
         // Make container visible
         containerRef.current.style.visibility = "visible"
 
-        // Split and animate first line
-        const firstLine = containerRef.current.querySelector(".first-line")
-        if (firstLine) {
-          const chars = splitText(firstLine, { type: "chars", preserveSpaces: true })
+        // Split and animate heading text
+        const heading = containerRef.current.querySelector("h1")
+        if (heading) {
+          const words = splitText(heading)
 
-          animateWithSpring(
-            chars,
+          animate(
+            words,
+            { opacity: [0, 1], y: [20, 0] },
             {
-              opacity: [0, 1],
-              y: [20, 0],
-              filter: ["blur(8px)", "blur(0px)"],
-            },
-            {
-              stiffness: 60, // Lower stiffness for smoother animation
-              damping: 18, // Higher damping for smoother animation
-              delay: stagger(0.06), // Longer stagger delay for slower animation
-              duration: 1.8, // Longer duration for slower animation
-            },
-          )
-        }
-
-        // Split and animate second line with a delay
-        const secondLine = containerRef.current.querySelector(".second-line")
-        if (secondLine) {
-          const chars = splitText(secondLine, { type: "chars", preserveSpaces: true })
-
-          animateWithSpring(
-            chars,
-            {
-              opacity: [0, 1],
-              y: [20, 0],
-              filter: ["blur(8px)", "blur(0px)"],
-            },
-            {
-              stiffness: 60,
-              damping: 18,
-              delay: stagger(0.06, { startDelay: 0.3 }), // Start after first line begins
-              duration: 1.8,
+              duration: 0.5,
+              delay: stagger(0.05),
+              ease: "easeOut",
             },
           )
         }
@@ -65,20 +38,20 @@ export default function Hero() {
         if (wavyElement) {
           const chars = splitText(wavyElement, { type: "chars" })
 
-          // Animate each character with wavy effect using spring physics
-          chars.forEach((char, i) => {
-            animate(
-              char,
-              { y: [-15, 15] },
-              {
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "mirror",
-                ease: "easeInOut",
-                duration: 3.5, // Slower wave animation
-                delay: i * 0.1, // Delay between characters
-              },
-            )
-          })
+          const staggerDelay = 0.15
+
+          // Animate each character with wavy effect
+          animate(
+            chars,
+            { y: [-20, 20] },
+            {
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "mirror",
+              ease: "easeInOut",
+              duration: 2,
+              delay: stagger(staggerDelay, { startDelay: -staggerDelay * chars.length }),
+            },
+          )
         }
       })
     }
@@ -87,42 +60,23 @@ export default function Hero() {
   return (
     <section className="w-full flex flex-col items-center justify-center py-24 px-4">
       <motion.div
-        className="relative w-16 h-16 rounded-md overflow-hidden mb-8"
-        style={{ width: 64, height: 64 }}
+        className="w-16 h-16 accent-bg rounded-md flex items-center justify-center mb-8"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 150, // Lower stiffness
-          damping: 30, // Higher damping
-          duration: 2, // Longer duration
-        }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
-        <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain rounded" />
+        <span className="text-black font-bold text-xl">C</span>
       </motion.div>
 
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 flex flex-col gap-2">
-          <span className="first-line">Welcome to</span>
-          <span className="second-line">Connectlify</span>
-        </h1>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">Welcome to Connectlify</h1>
 
-        <p className="text-xl md:text-2xl mt-4">
+        <p className="text-xl md:text-2xl">
           That's <span className="wavy text-yellow-300">waaaavy</span>.
         </p>
 
         <div className="flex justify-center mt-12">
-          <motion.button
-            className="quick-start-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{
-              type: "spring",
-              stiffness: 200, // Lower stiffness
-              damping: 25, // Higher damping
-              duration: 0.7, // Longer duration
-            }}
-          >
+          <motion.button className="quick-start-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             Quick start
           </motion.button>
         </div>
@@ -137,7 +91,7 @@ export default function Hero() {
           }}
           transition={{
             repeat: Number.POSITIVE_INFINITY,
-            duration: 18, // Even slower background animation
+            duration: 8,
             ease: "easeInOut",
           }}
         />
@@ -149,7 +103,7 @@ export default function Hero() {
           }}
           transition={{
             repeat: Number.POSITIVE_INFINITY,
-            duration: 22, // Even slower background animation
+            duration: 10,
             ease: "easeInOut",
           }}
         />

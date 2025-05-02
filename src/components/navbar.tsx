@@ -35,7 +35,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Image src="/images/logo.png" alt="Connectlify Logo" width={32} height={32} className="object-contain rounded" />
+            <Image src="/images/logo.png" alt="Connectlify Logo" width={32} height={32} className="object-contain" />
           </motion.div>
           <span className="font-heading text-xl font-bold text-white">Connectlify</span>
         </Link>

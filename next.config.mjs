@@ -1,7 +1,8 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    turbo: { dev: true },
+    turbo: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -10,14 +11,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'v0.blob.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    domains: ['v0.blob.com'],
   },
 };
 
