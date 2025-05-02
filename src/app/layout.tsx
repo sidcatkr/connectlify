@@ -11,7 +11,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/connectlify.svg",
     shortcut: "/connectlify.svg",
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#5bbad5" }
+    ],
   },
+  manifest: "/site.webmanifest",
 }
 
 export default function RootLayout({
