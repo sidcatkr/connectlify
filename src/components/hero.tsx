@@ -28,7 +28,6 @@ export default function Hero() {
             {
               opacity: [0, 1],
               y: [20, 0],
-              filter: ["blur(8px)", "blur(0px)"],
             },
             {
               stiffness: 60, // Lower stiffness for smoother animation
@@ -37,8 +36,8 @@ export default function Hero() {
               overshootClamping: true,
               restSpeed: 0.01,
               restDelta: 0.01,
-              delay: stagger(0.06), // Longer stagger delay for slower animation
-              duration: 1.8, // Longer duration for slower animation
+              delay: stagger(0.06), // Stagger each character
+              duration: 1.8, // Longer duration for smoother animation
             },
           )
         }
@@ -53,7 +52,6 @@ export default function Hero() {
             {
               opacity: [0, 1],
               y: [20, 0],
-              filter: ["blur(8px)", "blur(0px)"],
             },
             {
               stiffness: 60,
@@ -62,7 +60,7 @@ export default function Hero() {
               overshootClamping: true,
               restSpeed: 0.01,
               restDelta: 0.01,
-              delay: stagger(0.06, { startDelay: 0.3 }), // Start after first line begins
+              delay: stagger(0.06, { startDelay: 0.3 }), // Stagger each character after first line
               duration: 1.8,
             },
           )
@@ -137,7 +135,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-yellow-300/5 blur-3xl"
+          className="absolute top-1/4 left-10 w-64 h-64 rounded-full bg-yellow-300/5 blur-xl will-change-transform"
           animate={{
             x: [0, 30, 0],
             y: [0, -30, 0],
@@ -149,7 +147,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-10 w-80 h-80 rounded-full bg-yellow-300/10 blur-3xl"
+          className="absolute bottom-1/4 right-10 w-80 h-80 rounded-full bg-yellow-300/10 blur-xl will-change-transform"
           animate={{
             x: [0, -40, 0],
             y: [0, 40, 0],
