@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import Link from "next/link"
 import Image from "next/image"
 import { Github, Twitter, Linkedin } from "lucide-react"
@@ -14,18 +14,18 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center text-center">
           <Link href="/" className="flex items-center space-x-2 mb-6">
             <div className="relative w-8 h-8 rounded-lg overflow-hidden">
-              <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain" />
+              <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain rounded-[6px]" />
             </div>
             <span className="font-heading text-lg font-bold">Connectlify</span>
           </Link>
 
           <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-md">
-            Create fluid, intuitive user experiences with powerful animations.
+            Connectlify is growing.
           </p>
 
           <div className="flex space-x-4 mb-8">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/connectlify"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -35,7 +35,7 @@ export default function Footer() {
               <Github size={20} />
             </motion.a>
             <motion.a
-              href="https://twitter.com"
+              href="https://x.com/connectlify"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"

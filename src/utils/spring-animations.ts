@@ -2,7 +2,32 @@
 
 import { animate, type AnimationOptions, type MotionValue, useSpring } from "framer-motion"
 
-export const springConfig = {
+type SpringConfigKey = "light" | "medium" | "heavy" | "smooth"
+
+interface SpringConfigs {
+  light: {
+    stiffness: number
+    damping: number
+    mass: number
+  }
+  medium: {
+    stiffness: number
+    damping: number
+    mass: number
+  }
+  heavy: {
+    stiffness: number
+    damping: number
+    mass: number
+  }
+  smooth: {
+    stiffness: number
+    damping: number
+    mass: number
+  }
+}
+
+export const springConfig: SpringConfigs = {
   light: {
     stiffness: 170,
     damping: 26,
@@ -25,8 +50,8 @@ export const springConfig = {
   },
 }
 
-export function useSpringValue(value: MotionValue<number>, config = "medium") {
-  return useSpring(value, springConfig[config as keyof typeof springConfig])
+export function useSpringValue(value: MotionValue<number>, config: SpringConfigKey = "medium") {
+  return useSpring(value, springConfig[config])
 }
 
 export function animateWithSpring(

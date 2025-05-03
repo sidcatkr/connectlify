@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Image from "next/image"
-import { motion, animate, stagger } from "framer-motion"
+import { motion, animate, stagger } from "motion/react"
 import { splitText } from "@/utils/split-text"
 import { animateWithSpring } from "@/utils/spring-animations"
 
@@ -33,6 +33,10 @@ export default function Hero() {
             {
               stiffness: 60, // Lower stiffness for smoother animation
               damping: 18, // Higher damping for smoother animation
+              bounce: 0,
+              overshootClamping: true,
+              restSpeed: 0.01,
+              restDelta: 0.01,
               delay: stagger(0.06), // Longer stagger delay for slower animation
               duration: 1.8, // Longer duration for slower animation
             },
@@ -54,6 +58,10 @@ export default function Hero() {
             {
               stiffness: 60,
               damping: 18,
+              bounce: 0,
+              overshootClamping: true,
+              restSpeed: 0.01,
+              restDelta: 0.01,
               delay: stagger(0.06, { startDelay: 0.3 }), // Start after first line begins
               duration: 1.8,
             },
@@ -97,7 +105,7 @@ export default function Hero() {
           duration: 2, // Longer duration
         }}
       >
-        <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain" />
+        <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain rounded-xl" />
       </motion.div>
 
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
@@ -136,7 +144,7 @@ export default function Hero() {
           }}
           transition={{
             repeat: Number.POSITIVE_INFINITY,
-            duration: 18, // Even slower background animation
+            duration: 18, // Slower background animation
             ease: "easeInOut",
           }}
         />
@@ -148,7 +156,7 @@ export default function Hero() {
           }}
           transition={{
             repeat: Number.POSITIVE_INFINITY,
-            duration: 22, // Even slower background animation
+            duration: 22, // Slower background animation
             ease: "easeInOut",
           }}
         />

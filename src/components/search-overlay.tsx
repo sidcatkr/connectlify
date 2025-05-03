@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import { Search, X } from "lucide-react"
 
 export default function SearchOverlay() {
@@ -78,17 +78,16 @@ export default function SearchOverlay() {
       </button>
 
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
+        {isOpen &&
+          (
+            <motion.div
             className="fixed inset-0 z-50 flex items-start justify-center pt-[20vh] bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
-            <motion.div
-              ref={overlayRef}
-              className="w-full max-w-2xl mx-4"
+            <motion.div ref={overlayRef} className="w-full max-w-2xl mx-4"
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
@@ -130,7 +129,7 @@ export default function SearchOverlay() {
               )}
             </motion.div>
           </motion.div>
-        )}
+          )}
       </AnimatePresence>
     </>
   )

@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
-import SearchOverlay from "./search-overlay"
+import SearchOverlay from "@/components/search-overlay"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,7 +35,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Image src="/images/logo.png" alt="Connectlify Logo" width={32} height={32} className="object-contain" />
+            <Image src="/images/logo.png" alt="Connectlify Logo" width={32} height={32} className="object-contain rounded-[6px]" />
           </motion.div>
           <span className="font-heading text-xl font-bold text-white">Connectlify</span>
         </Link>

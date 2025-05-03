@@ -17,7 +17,7 @@ export function splitText(element: Element, options: SplitOptions = { type: "wor
       const words = text.split(/(\s+)/)
 
       // Then split each word into characters
-      words.forEach((word, wordIndex) => {
+      words.forEach((word) => {
         if (/^\s+$/.test(word)) {
           // This is a space/whitespace
           const space = document.createTextNode(word)
