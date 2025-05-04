@@ -82,8 +82,11 @@ export default function Hero() {
       </motion.div>
 
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 flex flex-col gap-2">
-          <span className="first-line">Welcome to Lunive</span>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          <span className="first-line">
+            <span className="block md:inline">Welcome to </span>
+            <span className="block md:inline">Lunive</span>
+          </span>
         </h1>
 
         <p className="text-xl md:text-2xl mt-4">
