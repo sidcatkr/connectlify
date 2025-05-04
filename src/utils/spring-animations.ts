@@ -1,6 +1,7 @@
-"use client"
+'use client'
 
-import { animate, type AnimationOptions, type MotionValue, useSpring } from "framer-motion"
+import { animate, type AnimationOptions, type MotionValue } from "motion"
+import { useSpring } from "motion/react"
 
 type SpringConfigKey = "light" | "medium" | "heavy" | "smooth"
 

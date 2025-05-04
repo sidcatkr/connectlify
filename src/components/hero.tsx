@@ -33,7 +33,6 @@ export default function Hero() {
               stiffness: 60, // Lower stiffness for smoother animation
               damping: 18, // Higher damping for smoother animation
               bounce: 0,
-              overshootClamping: true,
               restSpeed: 0.01,
               restDelta: 0.01,
               delay: stagger(0.06), // Stagger each character

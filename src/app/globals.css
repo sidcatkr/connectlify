@@ -66,3 +66,5 @@ body {
 .blur-transition {
   animation: blur-transition 0.3s ease-out forwards;
 }
+
+/* Hide default cursor block removed to keep native cursor visible */
