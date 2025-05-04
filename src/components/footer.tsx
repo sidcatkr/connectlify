@@ -14,13 +14,13 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center text-center">
           <Link href="/" className="flex items-center space-x-2 mb-6">
             <div className="relative w-8 h-8 rounded-lg overflow-hidden">
-              <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain rounded-[6px]" />
+              <Image src="/images/logo.png" alt="Lunive Logo" fill className="object-contain rounded-[6px]" />
             </div>
-            <span className="font-heading text-lg font-bold">Connectlify</span>
+            <span className="font-heading text-lg font-bold">Lunive</span>
           </Link>
 
           <p className="text-gray-500 dark:text-gray-400 mb-6 max-w-md">
-            Connectlify is growing.
+            Lunive is growing.
           </p>
 
           <div className="flex space-x-4 mb-8">
@@ -28,7 +28,7 @@ export default function Footer() {
               href="https://github.com/connectlify"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-white"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -38,7 +38,7 @@ export default function Footer() {
               href="https://x.com/connectlify"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-white"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -48,7 +48,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-white"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -56,7 +56,7 @@ export default function Footer() {
             </motion.a>
           </div>
 
-          <p className="text-gray-500 dark:text-gray-500 text-sm">© {currentYear} Connectlify. All rights reserved.</p>
+          <p className="text-gray-500 dark:text-gray-500 text-sm">© {currentYear} Lunive. All rights reserved.</p>
         </div>
       </div>
     </footer>

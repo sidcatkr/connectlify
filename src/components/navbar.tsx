@@ -30,14 +30,8 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <motion.div
-            className="relative w-8 h-8 rounded-md overflow-hidden"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Image src="/images/logo.png" alt="Connectlify Logo" width={32} height={32} className="object-contain rounded-[6px]" />
-          </motion.div>
-          <span className="font-heading text-xl font-bold text-white">Connectlify</span>
+            <Image src="/images/logo.png" alt="Lunive Logo" width={32} height={32} className="object-contain rounded-[6px]" />
+          <span className="font-heading text-xl font-bold text-white">Lunive</span>
         </Link>
 
         {/* Desktop Navigation */}

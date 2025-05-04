@@ -6,8 +6,8 @@ import "@/app/globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Connectlify - Make it connect",
-  description: "A robust animation library for modern web projects",
+  title: "Lunive",
+  description: "Being fancy",
 }
 
 export default function RootLayout({

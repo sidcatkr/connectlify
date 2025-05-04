@@ -42,30 +42,6 @@ export default function Hero() {
           )
         }
 
-        // Split and animate second line with a delay
-        const secondLine = containerRef.current.querySelector(".second-line")
-        if (secondLine) {
-          const chars = splitText(secondLine, { type: "chars", preserveSpaces: true })
-
-          animateWithSpring(
-            chars,
-            {
-              opacity: [0, 1],
-              y: [20, 0],
-            },
-            {
-              stiffness: 60,
-              damping: 18,
-              bounce: 0,
-              overshootClamping: true,
-              restSpeed: 0.01,
-              restDelta: 0.01,
-              delay: stagger(0.06, { startDelay: 0.3 }), // Stagger each character after first line
-              duration: 1.8,
-            },
-          )
-        }
-
         // Split and animate wavy text
         const wavyElement = containerRef.current.querySelector(".wavy")
         if (wavyElement) {
@@ -103,34 +79,18 @@ export default function Hero() {
           duration: 2, // Longer duration
         }}
       >
-        <Image src="/images/logo.png" alt="Connectlify Logo" fill className="object-contain rounded-xl" />
+        <Image src="/images/logo.png" alt="Lunive Logo" fill className="object-contain rounded-xl" />
       </motion.div>
 
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 flex flex-col gap-2">
-          <span className="first-line">Welcome to</span>
-          <span className="second-line">Connectlify</span>
+          <span className="first-line">Welcome to Lunive</span>
         </h1>
 
         <p className="text-xl md:text-2xl mt-4">
-          That's <span className="wavy text-yellow-300">waaaavy</span>.
+            Be <span className="wavy text-yellow-300">flexible</span>.
         </p>
 
-        <div className="flex justify-center mt-12">
-          <motion.button
-            className="quick-start-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{
-              type: "spring",
-              stiffness: 200, // Lower stiffness
-              damping: 25, // Higher damping
-              duration: 0.7, // Longer duration
-            }}
-          >
-            Quick start
-          </motion.button>
-        </div>
       </div>
 
       <div className="absolute inset-0 -z-10 overflow-hidden">

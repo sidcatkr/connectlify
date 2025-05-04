@@ -26,7 +26,7 @@ export default function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Start building fluid, intuitive user experiences today with Connectlify.
+            Start building fluid, intuitive user experiences today with Lunive.
           </motion.p>
 
           <motion.div
