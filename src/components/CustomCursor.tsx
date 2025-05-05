@@ -9,7 +9,9 @@ export default function CustomCursor() {
   useEffect(() => {
     // only respond to pointer events from mouse or pen (e.g., Magic Keyboard trackpad, stylus)
     const handlePointerMove = (e: PointerEvent) => {
-      if (e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+      const isMouse = e.pointerType === 'mouse';
+      const isPenHover = e.pointerType === 'pen' && e.buttons === 0;
+      if (!isMouse && !isPenHover) return;
       const CURSOR_RADIUS = 6; // half of 12px cursor
       const OFFSET_X = 0;
       const OFFSET_Y = 0;
@@ -38,4 +40,4 @@ export default function CustomCursor() {
       className="fixed top-0 left-0 z-[9999] w-3 h-3 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] pointer-events-none"
     />
   );
-} 
+}

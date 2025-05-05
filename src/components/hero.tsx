@@ -28,6 +28,7 @@ export default function Hero() {
             {
               opacity: [0, 1],
               y: [20, 0],
+              filter: ["blur(8px)", "blur(0px)"],
             },
             {
               stiffness: 60, // Lower stiffness for smoother animation
@@ -83,7 +84,7 @@ export default function Hero() {
 
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          <span className="first-line">
+          <span className="first-line blur-transition">
             Welcome to <br className="block md:hidden" /> Lunive
           </span>
         </h1>
