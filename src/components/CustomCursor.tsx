@@ -12,7 +12,7 @@ export default function CustomCursor() {
       if (e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
       const CURSOR_RADIUS = 6; // half of 12px cursor
       const OFFSET_X = 0;
-      const OFFSET_Y = 6;
+      const OFFSET_Y = 0;
       const x = e.clientX + OFFSET_X - CURSOR_RADIUS;
       const y = e.clientY + OFFSET_Y - CURSOR_RADIUS;
       setPosition({ x, y });
