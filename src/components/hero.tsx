@@ -84,8 +84,7 @@ export default function Hero() {
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
           <span className="first-line">
-            <span className="block md:inline">Welcome to </span>
-            <span className="block md:inline">Lunive</span>
+            Welcome to <br className="block md:hidden" /> Lunive
           </span>
         </h1>
 
