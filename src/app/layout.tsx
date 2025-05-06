@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Lunive",
   description: "Being fancy",
+  themeColor: "#000000",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     title: "Lunive",
+    capable: true,
+    statusBarStyle: "black-translucent",
   },
 }
 
