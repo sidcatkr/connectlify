@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-            <Image src="/images/logo.png" alt="Lunive Logo" width={32} height={32} className="object-contain rounded-[6px]" />
+            <Image src="/images/logo.svg" alt="Lunive Logo" width={32} height={32} className="object-contain rounded-[6px]" />
           <span className="font-heading text-xl font-bold text-white">Lunive</span>
         </Link>
 

@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center text-center">
           <Link href="/" className="flex items-center space-x-2 mb-6">
             <div className="relative w-8 h-8 rounded-lg overflow-hidden">
-              <Image src="/images/logo.png" alt="Lunive Logo" fill className="object-contain rounded-[6px]" />
+              <Image src="/images/logo.svg" alt="Lunive Logo" fill className="object-contain rounded-[6px]" />
             </div>
             <span className="font-heading text-lg font-bold">Lunive</span>
           </Link>

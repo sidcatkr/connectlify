@@ -79,7 +79,7 @@ export default function Hero() {
           duration: 2, // Longer duration
         }}
       >
-        <Image src="/images/logo.png" alt="Lunive Logo" fill className="object-contain rounded-xl" />
+        <Image src="/images/logo.svg" alt="Lunive Logo" fill className="object-contain rounded-xl" />
       </motion.div>
 
       <div ref={containerRef} className="text-center max-w-3xl" style={{ visibility: "hidden" }}>
