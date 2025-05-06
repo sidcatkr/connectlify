@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description: "Being fancy",
   themeColor: "#000000",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
     apple: "/apple-icon.png",
   },
   appleWebApp: {
