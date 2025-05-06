@@ -10,6 +10,14 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Lunive",
   description: "Being fancy",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  appleWebApp: {
+    title: "Lunive",
+  },
 }
 
 export default function RootLayout({

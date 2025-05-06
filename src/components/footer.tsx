@@ -25,7 +25,7 @@ export default function Footer() {
 
           <div className="flex space-x-4 mb-8">
             <motion.a
-              href="https://github.com/connectlify"
+              href="https://github.com/lunivehq"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -35,7 +35,7 @@ export default function Footer() {
               <Github size={20} />
             </motion.a>
             <motion.a
-              href="https://x.com/connectlify"
+              href="https://x.com/lunivehq"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
